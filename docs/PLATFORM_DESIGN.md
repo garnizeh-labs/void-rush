@@ -273,7 +273,7 @@ pub struct OctreeIndex(/* ... */);
 
 AOI filtering is applied in Stage 4 (extract) before building delta batches. Each client receives only the entities within their configured visibility radius (default: 100 world units). This is the primary scale mechanism: even with 10,000 entities in the world, a client near entity X only receives deltas for the ~50 entities around them.
 
-> **Canonical Sources:** See [SPATIAL_PARTITIONING_DESIGN.md](SPATIAL_PARTITIONING_DESIGN.md) for the engine's spatial hash grid implementation (replacing k-d tree/octree with hash grid in Phase 3), and [INTEREST_MANAGEMENT_DESIGN.md](INTEREST_MANAGEMENT_DESIGN.md) for the unified interest pipeline that composes spatial, room, tenant, and custom filters.
+> **Canonical Sources:** See [SPATIAL_PARTITIONING_DESIGN.md](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/SPATIAL_PARTITIONING_DESIGN.md) for the engine's spatial hash grid implementation (replacing k-d tree/octree with hash grid in Phase 3), and [INTEREST_MANAGEMENT_DESIGN.md](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/INTEREST_MANAGEMENT_DESIGN.md) for the unified interest pipeline that composes spatial, room, tenant, and custom filters.
 
 ### 4.3 Standard Component Types
 
@@ -628,7 +628,7 @@ impl MyExtensionMetrics {
 - **ComponentKind**: A 16-bit identifier used to route data to the correct encoder/decoder.
 - **Modular Core**: The architectural principle that every subsystem must be replaceable.
 
-[Full Glossary Document](../GLOSSARY.md)
+[Full Glossary Document](https://github.com/garnize/aetheris/blob/main/docs/GLOSSARY.md)
 
 ---
 
@@ -644,4 +644,4 @@ impl MyExtensionMetrics {
 
 ## Appendix A — Glossary
 
-Refer to the master [Glossary](../GLOSSARY.md) for project-wide technical terms.
+Refer to the master [Glossary](https://github.com/garnize/aetheris/blob/main/docs/GLOSSARY.md) for project-wide technical terms.

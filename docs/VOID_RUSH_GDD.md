@@ -693,7 +693,7 @@ Void Rush exercises the engine's **Priority Channel** system — a Kafka-inspire
 
 Priority Channels are a **differentiating engine feature**: developer-configurable via the `ChannelRegistry` builder API, bidirectional (both server→client and client→server traffic is prioritized), and dynamically shedable per-client. Void Rush uses the default 6-channel configuration; other games built on Aetheris can define entirely different channel topologies.
 
-> Full specification: [PRIORITY_CHANNELS_DESIGN.md](PRIORITY_CHANNELS_DESIGN.md)
+> Full specification: [PRIORITY_CHANNELS_DESIGN.md](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/PRIORITY_CHANNELS_DESIGN.md)
 
 ### 7.1 Why Void Rush Needs Priority Channels
 
@@ -962,7 +962,7 @@ graph LR
 
 Where $K$ is the average number of entities per cell (including neighbors).
 
-> **Canonical Source:** See [SPATIAL_PARTITIONING_DESIGN.md](SPATIAL_PARTITIONING_DESIGN.md) for the engine-level spatial hash grid design, `SpatialIndex` trait, AoI model, and cell transition protocol that generalize the Void Rush spatial system to all applications.
+> **Canonical Source:** See [SPATIAL_PARTITIONING_DESIGN.md](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/SPATIAL_PARTITIONING_DESIGN.md) for the engine-level spatial hash grid design, `SpatialIndex` trait, AoI model, and cell transition protocol that generalize the Void Rush spatial system to all applications.
 
 ---
 
@@ -1272,7 +1272,7 @@ Each entity occupies a fixed-size slot in the shared buffer:
 
 **Buffer capacity:** 8,192 entity slots × 48 bytes = **384 KB** (fits comfortably in L2 cache).
 
-> **Canonical Source:** See [WORKER_COMMUNICATION_DESIGN.md](WORKER_COMMUNICATION_DESIGN.md) for the engine-level SAB protocol, double-buffer flip-bit specification, extensible region model, and the full `EntityDisplayState` repr(C) struct.
+> **Canonical Source:** See [WORKER_COMMUNICATION_DESIGN.md](https://github.com/garnizeh-labs/aetheris-client/blob/main/docs/WORKER_COMMUNICATION_DESIGN.md) for the engine-level SAB protocol, double-buffer flip-bit specification, extensible region model, and the full `EntityDisplayState` repr(C) struct.
 
 ### 12.3 Visual Asset List (MVP)
 
@@ -1645,7 +1645,7 @@ graph TD
 | Term | Definition |
 |---|---|
 | **Ballistic Event** | A fire-and-forget weapon event replicated via reliable stream, not entity replication |
-| **Priority Channel** | A logical grouping of replicated data with a fixed priority level and shedding policy, defined via the `ChannelRegistry` builder API. See [PRIORITY_CHANNELS_DESIGN.md](PRIORITY_CHANNELS_DESIGN.md) |
+| **Priority Channel** | A logical grouping of replicated data with a fixed priority level and shedding policy, defined via the `ChannelRegistry` builder API. See [PRIORITY_CHANNELS_DESIGN.md](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/PRIORITY_CHANNELS_DESIGN.md) |
 | **Priority Shedding** | Selective dropping or frequency reduction of lower-priority channels under congestion |
 | **Channel Registry** | Developer-configurable set of priority channel definitions built at server startup; Void Rush uses the default 6-channel layout |
 | **Cargo-Mass Mechanic** | Gameplay rule where carrying ore increases ship mass, reducing acceleration |
@@ -1662,7 +1662,7 @@ graph TD
 | **Spatial Trinity** | The rock-paper-scissors relationship between Interceptor, Dreadnought, and Hauler |
 | **Void Rush** | The flagship game title validating the Aetheris Engine MVP |
 
-See also: [GLOSSARY.md](../GLOSSARY.md) for engine-level terminology.
+See also: [GLOSSARY.md](https://github.com/garnize/aetheris/blob/main/docs/GLOSSARY.md) for engine-level terminology.
 
 ---
 

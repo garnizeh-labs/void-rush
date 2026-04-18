@@ -92,7 +92,7 @@ produce ~2,500 events in under 2.5ms.
 
 The ECS never speaks directly to the transport or encoder. It speaks only to the `WorldState` trait, which is defined in `aetheris-protocol` and contains no game-library types.
 
-See [PROTOCOL_DESIGN.md §1](PROTOCOL_DESIGN.md#1-worldstate--ecs-adapter) for the canonical trait definition of `WorldState`.
+See [PROTOCOL_DESIGN.md §1](https://github.com/garnizeh-labs/aetheris-protocol/blob/main/docs/PROTOCOL_DESIGN.md#1-worldstate--ecs-adapter) for the canonical trait definition of `WorldState`.
 
 The game loop only ever holds a `Box<dyn WorldState>`. At startup, it is handed either a
 `BevyWorldAdapter` (P1) or the custom ECS adapter (P3). The loop itself is identical in both
@@ -206,7 +206,7 @@ These limitations are **acceptable in P1** and are the motivation for P3:
 
 ## 4. Phase 3 — `aetheris-ecs-custom`
 
-> **Prerequisite:** P2 stress tests must confirm that `aetheris-ecs-bevy` is the measured bottleneck before this crate is written. See [ENGINE_DESIGN.md](ENGINE_DESIGN.md#10-evolutionary-roadmap) for the evolutionary path.
+> **Prerequisite:** P2 stress tests must confirm that `aetheris-ecs-bevy` is the measured bottleneck before this crate is written. See [ENGINE_DESIGN.md](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/ENGINE_DESIGN.md#10-evolutionary-roadmap) for the evolutionary path.
 
 ### 4.1 Storage Model — Archetypes + Structure of Arrays (SoA)
 
@@ -530,7 +530,7 @@ This is 0.3% of the 16.6ms tick budget — negligible.
 
 Integrity verification is performed asynchronously by the Audit Worker.
 
-See [AUDIT_DESIGN.md](AUDIT_DESIGN.md) for the actor-based architecture of the audit system and its operational constraints.
+See [AUDIT_DESIGN.md](https://github.com/garnizeh-labs/nexus/blob/main/docs/AUDIT_DESIGN.md) for the actor-based architecture of the audit system and its operational constraints.
 
 ---
 
@@ -761,7 +761,7 @@ The P3 target for `extract_deltas` is identical to P1 — the goal is to maintai
 - **Dirty Bit**: A per-column bitset indicating which rows were mutated this tick.
 - **Merkle Chain**: A cryptographic sequence binding state changes for auditability.
 
-[Full Glossary Document](../GLOSSARY.md)
+[Full Glossary Document](https://github.com/garnize/aetheris/blob/main/docs/GLOSSARY.md)
 
 | Term | Definition |
 |---|---|
