@@ -1,2 +1,0 @@
-# Enforce that all wildcard imports are warned
-warn-on-all-wildcard-imports = true

@@ -8,7 +8,7 @@ A top-down 3D space MMO built on the Aetheris engine — Newtonian physics, cont
 
 **Void Rush** is the flagship demonstration of the Aetheris engine's capabilities. It pushes the boundaries of browser-native multiplayer by simulating a persistent universe where thousands of players interact in real-time. Every ship's thruster follows Newtonian laws, every asteroid is a destructible entity, and every trade route is contested in a living, player-driven economy.
 
-> **[Read the Game Design Document](VOID_RUSH_GDD.md)** — ship classes, weapons, economy loops, and world architecture.
+> **[Read the Game Design Document](docs/VOID_RUSH_GDD.md)** — ship classes, weapons, economy loops, and world architecture.
 >
 > 🚀 **Latest Milestone:** **Wireframe Debug Renderer (M1011) functional!** Replaced placeholder overlays with a high-performance in-canvas debug pass.
 
@@ -37,8 +37,8 @@ For a full list of commands, run `just --list`.
 
 ## Documentation Entry Points
 
-- **[VOID_RUSH_GDD.md](VOID_RUSH_GDD.md):** Master game design document.
-- **[THEME_WORLD_DESIGN.md](THEME_WORLD_DESIGN.md):** Visual identity and environmental rules.
+- **[VOID_RUSH_GDD.md](docs/VOID_RUSH_GDD.md):** Master game design document.
+- **[THEME_WORLD_DESIGN.md](docs/THEME_WORLD_DESIGN.md):** Visual identity and environmental rules.
 - **[ECS_DESIGN.md](docs/ECS_DESIGN.md):** Entity-Component-System layout for world entities.
 
 ## Design Philosophy
