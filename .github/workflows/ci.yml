@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docs-audit:
+    name: Documentation Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install codespell
+        run: sudo apt-get update && sudo apt-get install -y codespell
+      - name: Run Frontmatter Lint
+        run: python3 scripts/doc_lint.py
+      - name: Run Link Check
+        run: python3 scripts/check_links.py
+      - name: Run Spelling Check
+        run: codespell

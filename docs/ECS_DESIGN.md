@@ -59,7 +59,7 @@ This document covers:
 ## 2. ECS in the Five-Stage Pipeline
 
 The ECS participates in three of the five tick stages. Its budget is fixed and enforced by telemetry
-(see [LC-0100](../roadmap/archive/phase-0-foundation/specs/LC-0100_tick_pipeline.md) for the full timing contract).
+(see LC-0100 (Internal Timing Contract) for the full timing contract).
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -132,7 +132,7 @@ BevyWorldAdapter {
 
 The `bimap` is the most critical field. It is a strict bijection between the protocol's `NetworkId`
 and Bevy's internal `Entity` (which embeds both an index and a generation counter). Invariants B1
-through B4 from [LC-0400](../roadmap/archive/phase-0-foundation/specs/LC-0400_worldstate_ecs_contract.md) govern this
+through B4 from LC-0400 (Internal ECS Contract) govern this
 structure: bijection, atomicity, immutability after insertion, and no ID recycling.
 
 ### 3.3 Component Registry — `ComponentReplicator`
@@ -309,7 +309,7 @@ still single-threaded and returns when all systems have completed.
 The migration is designed to be a drop-in swap. The checklist:
 
 1. `aetheris-ecs-custom` implements `WorldState` with the **identical method signatures**.
-2. All invariants from [LC-0400](../roadmap/archive/phase-0-foundation/specs/LC-0400_worldstate_ecs_contract.md) remain
+2. All invariants from LC-0400 (Internal ECS Contract) remain
    satisfied: bimap bijection, atomic spawn/despawn, no NetworkId recycling.
 3. The `LocalId` wrapping contract changes: P3 uses `row_index: u32 || generation: u32` packed
    into a `u64` (see §7.2). The `to_bits()` / `from_bits()` round-trip contract is preserved.
@@ -324,7 +324,7 @@ The migration is designed to be a drop-in swap. The checklist:
 
 The bridge between the boiling-hot simulation and the cold persistence tier is handled via asynchronous, lock-free channels to ensure I/O latency never blocks the tick budget.
 
-See [PERSISTENCE_DESIGN.md](PERSISTENCE_DESIGN.md) for the full architectural specification of the persistence bridge, micro-batching strategy, and the event ledger schema.
+See [PERSISTENCE_DESIGN.md](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/PERSISTENCE_DESIGN.md) for the full architectural specification of the persistence bridge, micro-batching strategy, and the event ledger schema.
 
 ### 5.2 Event Sourcing — Append-Only Model
 
@@ -503,7 +503,7 @@ anomalous patterns are detected (impossible velocities, boundary exploits, stati
 against peer entities) and decays exponentially during clean ticks.
 
 > **Canonical definition:** The authoritative score ranges, increment values, and decay policy
-> are defined in [SECURITY_DESIGN.md §8](SECURITY_DESIGN.md#8-suspicionscore-system).
+> are defined in [SECURITY_DESIGN.md §8](https://github.com/garnizeh-labs/aetheris-engine/blob/main/docs/SECURITY_DESIGN.md#8-suspicionscore-system).
 > The table below is a summary; SECURITY_DESIGN is the source of truth.
 
 | Suspicion Level | Score Range | Audit Frequency | Behavior |
@@ -530,7 +530,7 @@ This is 0.3% of the 16.6ms tick budget — negligible.
 
 Integrity verification is performed asynchronously by the Audit Worker.
 
-See [AUDIT_DESIGN.md](https://github.com/garnizeh-labs/nexus/blob/main/docs/AUDIT_DESIGN.md) for the actor-based architecture of the audit system and its operational constraints.
+See internal audit documentation for the actor-based architecture of the audit system and its operational constraints.
 
 ---
 
