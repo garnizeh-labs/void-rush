@@ -69,7 +69,7 @@ Switching Worlds is analogous to switching between entirely different apps. You 
 |------------|-------------|-----------------|
 | `aetheris-playground` | Engine sandbox / developer tool | Tech-glass dark |
 | `void-rush` | Space MMO (Aetheris: Void Rush) | Sci-fi glassmorphic dark |
-| `nexus-hub` | (Future) social/hub layer | Minimal frosted light |
+| `aetheris-hub` | (Future) social/hub layer | Minimal frosted light |
 | `forge` | (Future) level / world editor | IDE-inspired dark |
 
 ### 1.2 What is a Theme?
@@ -105,7 +105,7 @@ Aetheris Engine
 │   ├── Theme: blueprint       (default, current aesthetic)
 │   └── Theme: blueprint-lite  (lower blur, accessibility)
 │
-└── World: nexus-hub           (future)
+└── World: aetheris-hub         (future)
     ├── Theme: frost           (default, light frosted)
     └── Theme: night           (dark mode)
 ```

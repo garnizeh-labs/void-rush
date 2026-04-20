@@ -10,9 +10,9 @@ A top-down 3D space MMO built on the Aetheris engine — Newtonian physics, cont
 
 > **[Read the Game Design Document](docs/VOID_RUSH_GDD.md)** — ship classes, weapons, economy loops, and world architecture.
 >
-> 🚀 **Latest Milestone:** **Wireframe Debug Renderer (M1011) functional!** Replaced placeholder overlays with a high-performance in-canvas debug pass.
+> 🚀 **Latest Milestone:** **M10146** — Multirepo Consolidation & Hardening (Completed)
 
-[![CI](https://github.com/garnizeh-labs/void-rush/actions/workflows/ci.yml/badge.svg)](https://github.com/garnizeh-labs/void-rush/actions/workflows/ci.yml)
+[![Build Status](https://github.com/garnizeh-labs/void-rush/actions/workflows/ci.yml/badge.svg)](https://github.com/garnizeh-labs/void-rush/actions)
 [![Rust Version](https://img.shields.io/badge/rust-1.94%2B-blue.svg?logo=rust)](https://www.rust-lang.org/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
